@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shade"
+    tools:context=".MainActivity">
+    <ProgressBar
+        android:id="@+id/Progress_bar_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+    <RelativeLayout
+        android:id="@+id/rlHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/home_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:scaleType="centerCrop"
+            android:src="@color/black_shade" />
+
+        <TextView
+            android:id="@+id/txtvCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+        <LinearLayout
+            android:id="@+id/LlEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/txtvCityName"
+            android:weightSum="5"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_inp_lay_Search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:layout_weight="4.5"
+                android:background="@android:color/transparent"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white"
+                android:hint="Enter City Name"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city_Search_Input_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@android:color/transparent"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/city_name_search_iv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.5"
+                android:background="@android:color/transparent"
+                android:contentDescription="search_icon"
+                android:src="@drawable/ic_city_serch_edt"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtv_temprature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LlEdt"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="70sp"
+            android:textColor="@color/white"
+            android:text=""
+            />
+        <ImageView
+            android:id="@+id/weather_condition_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_temprature"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@android:color/transparent"
+            />
+        <TextView
+            android:id="@+id/txtv_weather_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/weather_condition_image"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_forecast_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtv_weather_condition"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="Todays Forecast"
+            android:visibility="gone"
+            android:textSize="20sp"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:layout_below="@id/txtv_weather_condition"
+            app:lottie_rawRes="@raw/loading"
+            />
+
+        <TextView
+            android:id="@+id/txtv_min_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtv_forecast_title"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_max_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_forecast_title"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_FeelLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtv_min_temp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtv_FeelLike"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtv_FeelLike"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/txtv_windspeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/txtv_sunset"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text=""
+            android:textSize="20sp"
+            />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
